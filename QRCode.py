@@ -35,6 +35,12 @@ class QRCodeGenerator:
             print("There was some error")
             return None
 
+    def writeToFile(self,data,filename,ext): #ext : extension
+        fn = filename+"."+ext
+        with open(fn,"w",encoding="utf-8") as f:
+            f.write(data)
+            print("data written successfully to file : " + fn)
+
 
 
 
