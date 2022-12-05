@@ -7,6 +7,7 @@ import sys, qrcode
 import cv2
 class QRCodeGenerator:
 
+
     def encode(self,data,filename):
         # Encoding data using make() function
         img = qrcode.make(data)
@@ -34,6 +35,12 @@ class QRCodeGenerator:
         else:
             print("There was some error")
             return None
+
+
+    def readFile(self,filename):
+        with open(filename,"r",encoding='utf8') as f:
+            return f.read()
+
 
     def writeToFile(self,data,filename,ext): #ext : extension
         fn = filename+"."+ext
